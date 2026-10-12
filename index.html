@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>랜덤 숫자 뽑기</title>
+  <style>
+    body {
+      font-family: system-ui, sans-serif;
+      background: #f4f6fb;
+      display: grid;
+      place-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 8px 30px #0001;
+      width: min(320px, calc(100% - 100px));
+    }
+
+    #number {
+      font-size: 72px;
+      font-weight: 800;
+      margin: 24px 0;
+    }
+
+    button {
+      border: 0;
+      border-radius: 12px;
+      padding: 14px 24px;
+      background: #315efb;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>🎲 랜덤 숫자 뽑기</h1>
+    <p>버튼을 눌러 숫자를 뽑아보세요!</p>
+    <div id="number">?</div>
+    <button onclick="pickNumber()">숫자 뽑기</button>
+  </main>
+
+  <script>
+    function pickNumber() {
+      document.getElementById("number").textContent =
+        Math.floor(Math.random() * 100) + 1;
+    }
+  </script>
+</body>
+</html>
