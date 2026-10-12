@@ -28,6 +28,10 @@ main{max-width:560px;min-height:100vh;margin:auto;background:var(--white);box-sh
 .photo-grid{max-width:480px;margin:auto}
 .photo-card{margin:0;overflow:hidden;background:var(--paper)}
 .photo-card img{display:block;width:100%;height:auto}
+.gallery-section{padding:52px 18px;text-align:center;border-bottom:1px solid var(--line)}
+.gallery-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5px;max-width:480px;margin:auto}
+.gallery-item{aspect-ratio:1;margin:0;overflow:hidden;background:var(--paper)}
+.gallery-item img{display:block;width:100%;height:100%;object-fit:cover}
 section.message-section,section.date-section{padding:62px 28px;text-align:center;border-bottom:1px solid var(--line)}
 .kicker{margin-bottom:12px;color:var(--gold);font:10px Arial,sans-serif;letter-spacing:.28em}
 h2{margin:0 0 26px;font-size:21px;font-weight:400;letter-spacing:.1em}
@@ -87,6 +91,21 @@ footer{padding:34px 15px 48px;color:var(--muted);font-size:11px;letter-spacing:.
       <div class="timebox"><strong id="secs">--</strong><small>SECS</small></div>
     </div>
     <p id="dday" class="note">따뜻한 마음으로 축복해 주셔서 감사합니다.</p>
+  </section>
+
+  <section class="gallery-section" aria-label="웨딩 사진 갤러리">
+    <div class="kicker">GALLERY</div>
+    <div class="gallery-grid">
+      <figure class="gallery-item"><img src="images/couple-beach.jpg" alt="노을이 지는 바닷가의 웨딩 사진" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="images/couple-field.jpg" alt="푸른 들판의 웨딩 사진" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="images/couple-beach.jpg" alt="노을이 지는 바닷가의 웨딩 사진" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="images/couple-field.jpg" alt="푸른 들판의 웨딩 사진" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="images/couple-beach.jpg" alt="노을이 지는 바닷가의 웨딩 사진" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="images/couple-field.jpg" alt="푸른 들판의 웨딩 사진" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="images/couple-beach.jpg" alt="노을이 지는 바닷가의 웨딩 사진" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="images/couple-field.jpg" alt="푸른 들판의 웨딩 사진" loading="lazy"></figure>
+      <figure class="gallery-item"><img src="images/couple-beach.jpg" alt="노을이 지는 바닷가의 웨딩 사진" loading="lazy"></figure>
+    </div>
   </section>
 
   <section class="photo-section" aria-label="함께 걷는 웨딩 사진">
