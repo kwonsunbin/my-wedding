@@ -293,15 +293,22 @@ updateCountdown();setInterval(updateCountdown,1000);
     if (event.key === 'ArrowLeft') go(-1);
     if (event.key === 'ArrowRight') go(1);
   });
-  dialog.addEventListener('pointerdown', (event) => {
-    if (event.pointerType === 'touch' && event.target === preview) touchStartX = event.clientX;
-  });
-  dialog.addEventListener('pointerup', (event) => {
-    if (touchStartX === null) return;
-    const delta = event.clientX - touchStartX;
+  preview.addEventListener('touchstart', (event) => {
+    if (event.touches.length !== 1) {
+      touchStartX = null;
+      return;
+    }
+    touchStartX = event.touches[0].clientX;
+  }, { passive: true });
+  preview.addEventListener('touchend', (event) => {
+    if (touchStartX === null || event.changedTouches.length !== 1) return;
+    const delta = event.changedTouches[0].clientX - touchStartX;
     touchStartX = null;
-    if (Math.abs(delta) > 45) go(delta < 0 ? 1 : -1);
-  });
+    if (Math.abs(delta) > 60) go(delta < 0 ? 1 : -1);
+  }, { passive: true });
+  preview.addEventListener('touchcancel', () => {
+    touchStartX = null;
+  }, { passive: true });
   dialog.addEventListener('close', () => opener && opener.focus());
 })();
 </script>
